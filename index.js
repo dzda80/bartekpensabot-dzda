@@ -95,7 +95,7 @@ bot.onText(/sistema/, async (msg) => {
  });
  
  bot.onText(/Mangiamo/, async (msg) => {
-     await setMessageForUser(msg);
+
      if( GiornoCambiato()) console.log("cambiato Giorno");
      if(perPranzo <= 0) {
          if(questions && questions.pranzo) {
@@ -112,7 +112,6 @@ bot.onText(/sistema/, async (msg) => {
  });
  
  bot.onText(/ics/, async (msg) => {
-     await setMessageForUser(msg);
      if(questions && questions.domandone) {
          var quest = questions.ics.map(x=> x + " \n");
  
