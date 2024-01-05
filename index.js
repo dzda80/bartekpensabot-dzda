@@ -1,13 +1,16 @@
 require("./app")
 const { Constants } = require("./constants");
 const friday = require('./friday.json'); 
+var questions = require('./questions.json');
 
 const whats ="Cosa?";
 const TelegramBot =require('node-telegram-bot-api');
-const { setJson } = require("./redisClient");
 const bot = new TelegramBot(process.env.BOT_API_KEY, {polling:true});
+
+
+
 var id_message_start ="";
-var questions = require('./questions.json');
+
 const keyboard = {
     "inline_keyboard": [
         [
@@ -76,8 +79,8 @@ bot.onText(/sistema/, async (msg) => {
  
   bot.onText(/R.Dicecose/, async (msg) => {
     
-     if(questions && questions.Rigat) {
-         var quest = rispondi(questions.Rigat);
+     if(questions && questions.RDiceCose) {
+         var quest = rispondi(questions.RDiceCose);
          bot.sendMessage("R. dice: " +  msg.chat.id,quest);
      } else {
          bot.sendMessage(msg.chat.id, whats);
@@ -102,10 +105,10 @@ bot.onText(/sistema/, async (msg) => {
  });
  
  bot.onText(/ics/, async (msg) => {
-     if(questions && questions.domandone) {
+     if(questions && questions.ics) {
          var quest = questions.ics.map(x=> x + " \n");
  
-         bot.sendMessage(msg.chat.id, "Questi sono ICS: \n" +quest);
+         bot.sendMessage(msg.chat.id, "Questi sono ICS: \n" + quest);
      } else {
          bot.sendMessage(msg.chat.id, whats);
      }
@@ -120,19 +123,20 @@ bot.onText(/sistema/, async (msg) => {
         return true;
     }
     return false;
+   
+}
 
-    function rispondi(lista){
+function rispondi(lista){
     
-        if( GiornoCambiato()) console.log("cambiato Giorno");
-    
-        var isFriday = (new Date().getDay() === 5) ; 
-    
-        if(isFriday && done < friday.esclamazioni.length) {  
-            perPranzo = -1;   
-            return friday.esclamazioni[done++] 
-       }
-       else{
-           return lista[Math.floor(Math.random() * lista.length)]
-       }
-    }
+    if( GiornoCambiato()) console.log("cambiato Giorno");
+
+    var isFriday = (new Date().getDay() === 5) ; 
+
+    if(isFriday && done < friday.esclamazioni.length) {  
+        perPranzo = -1;   
+        return friday.esclamazioni[done++] 
+   }
+   else{
+       return lista[Math.floor(Math.random() * lista.length)]
+   }
 }
