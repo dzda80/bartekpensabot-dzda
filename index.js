@@ -79,8 +79,8 @@ bot.onText(/sistema/, async (msg) => {
  
   bot.onText(/R.Dicecose/, async (msg) => {
     
-     if(questions && questions.Rigat) {
-         var quest = rispondi(questions.Rigat);
+     if(questions && questions.RDiceCose) {
+         var quest = rispondi(questions.RDiceCose);
          bot.sendMessage("R. dice: " +  msg.chat.id,quest);
      } else {
          bot.sendMessage(msg.chat.id, whats);
@@ -105,10 +105,10 @@ bot.onText(/sistema/, async (msg) => {
  });
  
  bot.onText(/ics/, async (msg) => {
-     if(questions && questions.domandone) {
+     if(questions && questions.ics) {
          var quest = questions.ics.map(x=> x + " \n");
  
-         bot.sendMessage(msg.chat.id, "Questi sono ICS: \n" +quest);
+         bot.sendMessage(msg.chat.id, "Questi sono ICS: \n" + quest);
      } else {
          bot.sendMessage(msg.chat.id, whats);
      }
