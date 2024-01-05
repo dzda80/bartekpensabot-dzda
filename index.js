@@ -1,14 +1,13 @@
 require("./app")
 const { Constants } = require("./constants");
 const friday = require('./friday.json'); 
-const questionsRedisKey = "questions";
-const questions_bck = require('./questions.json');
+
 const whats ="Cosa?";
 const TelegramBot =require('node-telegram-bot-api');
 const { setJson } = require("./redisClient");
 const bot = new TelegramBot(process.env.BOT_API_KEY, {polling:true});
 var id_message_start ="";
-var questions = "";
+var questions = require('./questions.json');
 const keyboard = {
     "inline_keyboard": [
         [
