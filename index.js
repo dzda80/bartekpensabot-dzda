@@ -120,3 +120,29 @@ bot.onText(/sistema/, async (msg) => {
          bot.sendMessage(msg.chat.id, whats);
      }
  });
+
+ function GiornoCambiato(){
+    var dayOfWeek = new Date().getDay();
+    if(dayOfWeek_global != dayOfWeek) {
+        dayOfWeek_global =  dayOfWeek;
+        done = 0;
+        perPranzo = 0;
+        return true;
+    }
+    return false;
+
+    function rispondi(lista){
+    
+        if( GiornoCambiato()) console.log("cambiato Giorno");
+    
+        var isFriday = (new Date().getDay() === 5) ; 
+    
+        if(isFriday && done < friday.esclamazioni.length) {  
+            perPranzo = -1;   
+            return friday.esclamazioni[done++] 
+       }
+       else{
+           return lista[Math.floor(Math.random() * lista.length)]
+       }
+    }
+}
