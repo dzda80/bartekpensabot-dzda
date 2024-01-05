@@ -26,8 +26,18 @@ var perPranzo = 0;
 var today_global = new Date();
 var dayOfWeek_global  = today_global.getDay();
 var menutoogle = true;
+
+
+bot.onText(/init/, async (msg) => {
+    done = 0;
+    perPranzo = 0;
+    questions = await readQuestions(msg);
+    console.log("Init from " + msg.from.username);
+});
+
 bot.onText(/^[\/]{1}Start/, (msg) => {
 
+    perPranzo= 0;
     bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
         reply_markup : {
             keyboard : [[Constants.Question]],
@@ -38,34 +48,16 @@ bot.onText(/^[\/]{1}Start/, (msg) => {
     })
 });
 
-bot.onText(/Domandati/, (msg) => {
-    var today = new Date();
-    var dayOfWeek = today.getDay();
-    
-    console.log("Start from " + msg.from.username);
-
-    bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
-        reply_markup : {
-            keyboard : [[Constants.Question],[Constants.Lunch],[Constants.Ics],[Constants.Rigat],],
-            force_reply : true
-        }
-    })
-
-
-    if(dayOfWeek_global != dayOfWeek) done = 0;
-    
-
-    var isFriday = (dayOfWeek === 5) ; // 6 = Saturday, 0 = Sunday
-
-    if(isFriday && done < friday.esclamazioni.length) {        
-         bot.sendMessage(msg.chat.id, friday.esclamazioni[done] );
-         done = done+1;
+bot.onText(/Domandati/, async (msg) => {
+    console.log("Domandati");
+    console.log(questions.domandone);
+    if(questions && questions.domandone) {
+        var quest = rispondi(questions.domandone);
+        bot.sendMessage(msg.chat.id, "Bartek si Domanda: \n" + quest);
+    } else {
+        bot.sendMessage(msg.chat.id, whats);
     }
-    else{
-        const quest = questions.domandone[Math.floor(Math.random() * questions.domandone.length)]
-        bot.sendMessage(msg.chat.id,quest);
-    }
-    
+
 });
 
 bot.onText(/sistema/, async (msg) => {
