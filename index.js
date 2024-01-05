@@ -31,7 +31,6 @@ var menutoogle = true;
 bot.onText(/init/, async (msg) => {
     done = 0;
     perPranzo = 0;
-    questions = await readQuestions(msg);
     console.log("Init from " + msg.from.username);
 });
 
