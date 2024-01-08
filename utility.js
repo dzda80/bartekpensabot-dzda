@@ -58,11 +58,11 @@ module.exports = {
         risposta += "\n" + Commands.Ics + " <tx>: " + Constants.Ics +" item";
         //risposta += "\n" + Commands.AddMangiamo + " <tx>: to Add New place where we can EAT " + Constants.Lunch +"";
         //risposta += "\n" + Commands.RemoveMangiamo + " <tx>: to Remove a place where we can EAT " + Constants.Lunch +"";
-        risposta += "\n" + Commands.AddRDiceCose + " <tx>: to Add New Smart Eclamation to " + Constants.RDiceCose +"";
-        risposta += "\n" + Commands.RemoveRDiceCose + " <tx>: to Remove an Esclamation to " + Constants.RDiceCose +"";
+        risposta += "\n" + Commands.AddRDiceCose + " <tx>: to Add New Smart Eclamation to " + Constants.QuelloDiceCose +"";
+        risposta += "\n" + Commands.RemoveRDiceCose + " <tx>: to Remove an Esclamation to " + Constants.QuelloDiceCose +"";
         risposta += "\n" + Commands.AllBartek + " <tx>: to List all items in " + Constants.Question +"";
         //risposta += "\n" + Commands.AllMangiamo + " <tx>: to List all items in " + Constants.Lunch +"";
-        risposta += "\n" + Commands.AllRDiceCose + " <tx>: to List all items in " + Constants.RDiceCose +"";
+        risposta += "\n" + Commands.AllRDiceCose + " <tx>: to List all items in " + Constants.QuelloDiceCose +"";
         risposta += "\n" + Commands.Version + " the current version.";
         risposta += "\n" + Commands.Init + " WIP";
 
