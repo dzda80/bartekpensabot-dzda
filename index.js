@@ -14,26 +14,26 @@ const bot = new TelegramBot(process.env.BOT_API_KEY, {polling:true});
 
 var id_message_start ="";
 
-const keyboard = {  
-    main_menu: {
-        reply_markup: {
-            keyboard: [
-                [{text: "Cards"}, {text: "Progress"}],
-                [{text: "Warning"}, {text: "Help"}]
-            ]
-        }
-    }
-};
+// const keyboard = {  
+//     main_menu: {
+//         reply_markup: {
+//             keyboard: [
+//                 [{text: "Cards"}, {text: "Progress"}],
+//                 [{text: "Warning"}, {text: "Help"}]
+//             ]
+//         }
+//     }
+// };
 
-// const keyboard = {
-//     "inline_keyboard": [
-//         [
-//             {"text": "Questions", "callback_data": "Mangiamo"},
-//             {"text": "Dove mangiare",  "callback_data": "Domandati"},
-//             {"text": "Ics", "callback_data": "ics"},
-//         ]
-//         ]
-//     };
+const keyboard = {
+    "inline_keyboard": [
+        [
+            {"text": "Questions", "callback_data": "Mangiamo"},
+            {"text": "Dove mangiare",  "callback_data": "Domandati"},
+            {"text": "Ics", "callback_data": "ics"},
+        ]
+        ]
+    };
 
     
 
