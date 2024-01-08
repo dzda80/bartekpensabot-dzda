@@ -1,6 +1,7 @@
 require("./app")
 const { Constants } = require("./constants");
-const { Utility } = require("./utility");
+const Utility = require("./utility");
+const { rispondi } = require("./utility");
 const friday = require('./friday.json'); 
 var questions = require('./questions.json');
 
@@ -54,7 +55,7 @@ bot.onText(/Domandati/, async (msg) => {
     console.log("Domandati");
     console.log(questions.domandone);
     if(questions && questions.domandone) {
-        var quest = Utility.rispondi(questions.domandone);
+        var quest = rispondi(questions.domandone);
         bot.sendMessage(msg.chat.id, "Bartek si Domanda: \n" + quest);
     } else {
         bot.sendMessage(msg.chat.id, whats);
