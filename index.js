@@ -35,10 +35,27 @@ var dayOfWeek_global  = today_global.getDay();
 var menutoogle = true;
 
 
+bot.onText(/^\/start$/, function (msg) {
+    bot.sendMessage(msg.chat.id, "I'm a test robot");
+
+    const opts = {
+        reply_to_message_id: msg.message_id,
+        reply_markup: {
+            resize_keyboard: true,
+            one_time_keyboard: true,
+            keyboard: [ ['Level 1'] ]
+        }
+    };
+
+    bot.sendMessage(msg.chat.id, "I'm a test robot", opts);
+});
+
 bot.onText(/init/, async (msg) => {
     done = 0;
     perPranzo = 0;
     console.log("Init from " + msg.from.username);
+   
+  
 });
 
 bot.onText(/}Start/, (msg) => {
