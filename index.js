@@ -46,7 +46,7 @@ bot.onText(/^[\/]{1}Start/, (msg) => {
 
     bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
         reply_markup : {
-            keyboard : [[Constants.Question],[Constants.Lunch],[Constants.Ics],[Constants.Rigat],],
+            keyboard : keyboard,
             force_reply : true
         }
     })
