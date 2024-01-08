@@ -14,16 +14,7 @@ const bot = new TelegramBot(process.env.BOT_API_KEY, {polling:true});
 
 var id_message_start ="";
 
-// const keyboard = {  
-//     main_menu: {
-//         reply_markup: {
-//             keyboard: [
-//                 [{text: "Cards"}, {text: "Progress"}],
-//                 [{text: "Warning"}, {text: "Help"}]
-//             ]
-//         }
-//     }
-// };
+
 
 const keyboard = {
     "inline_keyboard": [
@@ -50,10 +41,15 @@ bot.onText(/init/, async (msg) => {
     console.log("Init from " + msg.from.username);
 });
 
-bot.onText(/Start/, (msg) => {
+bot.onText(/^[\/]{1}Start/, (msg) => {
     console.log("Start from " + msg.from.username);
 
-    bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {reply_markup: keyboards.main_menu.reply_keyboard})
+    bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
+        reply_markup : {
+            keyboard : [[Constants.Question],[Constants.Lunch],[Constants.Ics],[Constants.Rigat],],
+            force_reply : true
+        }
+    })
 });
 
 
