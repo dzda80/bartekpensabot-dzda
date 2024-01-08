@@ -1,5 +1,6 @@
 require("./app")
 const { Constants } = require("./constants");
+const { Utility } = require("./utility");
 const friday = require('./friday.json'); 
 var questions = require('./questions.json');
 
@@ -53,7 +54,7 @@ bot.onText(/Domandati/, async (msg) => {
     console.log("Domandati");
     console.log(questions.domandone);
     if(questions && questions.domandone) {
-        var quest = rispondi(questions.domandone);
+        var quest = Utility.rispondi(questions.domandone);
         bot.sendMessage(msg.chat.id, "Bartek si Domanda: \n" + quest);
     } else {
         bot.sendMessage(msg.chat.id, whats);
@@ -77,11 +78,11 @@ bot.onText(/sistema/, async (msg) => {
      
  });
  
-  bot.onText(/R.Dicecose/, async (msg) => {
-    
-     if(questions && questions.RDiceCose) {
-         var quest = rispondi(questions.RDiceCose);
-         bot.sendMessage("R. dice: " +  msg.chat.id,quest);
+  bot.onText(/QuelloDicecose/, async (msg) => {
+    console.log("QuelloDicecose");
+     if(questions && questions.QuelloDiceCose) {
+         var quest = rispondi(questions.QuelloDiceCose);
+         bot.sendMessage("Quello dice: " +  msg.chat.id,quest);
      } else {
          bot.sendMessage(msg.chat.id, whats);
      }
@@ -126,17 +127,3 @@ bot.onText(/sistema/, async (msg) => {
    
 }
 
-function rispondi(lista){
-    
-    if( GiornoCambiato()) console.log("cambiato Giorno");
-
-    var isFriday = (new Date().getDay() === 5) ; 
-
-    if(isFriday && done < friday.esclamazioni.length) {  
-        perPranzo = -1;   
-        return friday.esclamazioni[done++] 
-   }
-   else{
-       return lista[Math.floor(Math.random() * lista.length)]
-   }
-}
