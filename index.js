@@ -2,6 +2,7 @@ require("./app")
 const { Constants } = require("./constants");
 const friday = require('./friday.json'); 
 var questions = require('./questions.json');
+const utility = require("./utility");
 
 const Utility = require("./utility");
 
@@ -13,17 +14,28 @@ const bot = new TelegramBot(process.env.BOT_API_KEY, {polling:true});
 
 var id_message_start ="";
 
-const keyboard = {
-    "inline_keyboard": [
-        [
-            {"text": "Questions", "callback_data": "mangiamo?"},
-        ],
-        [
-            {"text": "Dove mangiare",  "callback_data": "Domandati?"},
-            {"text": "Ics", "callback_data": "ics"},
-        ]
-        ]
-    };
+const keyboard = {  
+    main_menu: {
+        reply_markup: {
+            keyboard: [
+                [{text: "Cards"}, {text: "Progress"}],
+                [{text: "Warning"}, {text: "Help"}]
+            ]
+        }
+    }
+};
+
+// const keyboard = {
+//     "inline_keyboard": [
+//         [
+//             {"text": "Questions", "callback_data": "Mangiamo"},
+//             {"text": "Dove mangiare",  "callback_data": "Domandati"},
+//             {"text": "Ics", "callback_data": "ics"},
+//         ]
+//         ]
+//     };
+
+    
 
 var done = 0;
 var perPranzo = 0;
@@ -41,20 +53,23 @@ bot.onText(/init/, async (msg) => {
 bot.onText(/^[\/]{1}Start/, (msg) => {
     console.log("Start from " + msg.from.username);
 
-    bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
-        reply_markup : {
-            keyboard : [[Constants.Question],[Constants.Lunch],[Constants.Ics],[Constants.Rigat],],
-            force_reply : true
-        }
-    })
+    bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {reply_markup: keyboards.main_menu.reply_keyboard})
+});
+
+
+bot.onText(/Version/, async (msg) => {
+    console.log("Version");
+    console.log(Constants.Version);
+    bot.sendMessage(msg.chat.id, "Versione: \n" + Constants.Version);
+
 });
 
 bot.onText(/Domandati/, async (msg) => {
     console.log("Domandati");
-    console.log(questions.domandone);
+    //console.log(questions.domandone);
     if(questions && questions.domandone) {
         var quest = rispondi(questions.domandone);
-        bot.sendMessage(msg.chat.id, "Bartek si Domanda: \n" + quest);
+        bot.sendMessage(msg.chat.id, "Qeullo dice: \n" + quest);
     } else {
         bot.sendMessage(msg.chat.id, whats);
     }
@@ -69,7 +84,7 @@ bot.onText(/sistema/, async (msg) => {
          {"reply_to_message_id": msg.message_id, "force_reply" : "true"}
          :{"reply_to_message_id": msg.message_id, "reply_markup": JSON.stringify(keyboard), "force_reply" : "true"};
  
-     bot.sendMessage(msg.chat.id, menutoogle ? "Menu Disattivato": "Menu Attivato", data , function (isSuccess) {
+     bot.sendMessage(msg.chat.id, !menutoogle ? "Menu Disattivato": "Menu Attivato", data , function (isSuccess) {
          console.log(isSuccess);
      });
  
@@ -113,6 +128,17 @@ bot.onText(/sistema/, async (msg) => {
          bot.sendMessage(msg.chat.id, whats);
      }
  });
+
+
+ bot.onText(/help/, async (msg) => {
+    if(questions && questions.ics) {
+        var quest = utility.helpMessage();
+
+        bot.sendMessage(msg.chat.id, "Questi sono ICS: \n" + quest);
+    } else {
+        bot.sendMessage(msg.chat.id, whats);
+    }
+});
 
  function GiornoCambiato(){
     var dayOfWeek = new Date().getDay();

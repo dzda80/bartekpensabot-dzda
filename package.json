@@ -1,7 +1,7 @@
 {
-  "name": "bartekpensabot",
+  "name": "quellodicebot",
   "version": "1.0.0",
-  "description": "Cosa pensa Bartek oggi?",
+  "description": "Cosa dice quello oggi?",
   "main": "index.js",
   "repository": "https://github.com/ale8622/bartekpensabot",
   "author": "ale8622",

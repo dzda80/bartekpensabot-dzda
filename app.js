@@ -11,6 +11,7 @@ app.listen(PORT, function(){
 })
 
 app.get('/', (req, res) => {
-    res.send('BartekPensaBot')
+    res.send('QuelleoDiceCose')
+    res.send('Ciao')
   })
   

@@ -58,20 +58,19 @@ module.exports = {
     
     helpMessage: function  (){
 
-        var risposta = "";
-        risposta += "\n" + Commands.AddBartek + " <tx>: to Add New answer to " + Constants.Question +"";
-        risposta += "\n" + Commands.RemoveBartek + " <tx>: to Remove an answer to " + Constants.Question +"";
-        risposta += "\n" + Commands.AddIcs + " <tx>: to Add New item to the " + Constants.Ics +" list";
-        risposta += "\n" + Commands.RemoveIcs + " <tx>: to Remove an item to the " + Constants.Ics +" list";
-        risposta += "\n" + Commands.IcsAll + " <tx>: to " + Constants.Ics +" list";
+        var risposta = "";      
+        //risposta += "\n" + Commands.AddIcs + " <tx>: to Add New item to the " + Constants.Ics +" list";
+        //risposta += "\n" + Commands.RemoveIcs + " <tx>: to Remove an item to the " + Constants.Ics +" list";
+        //risposta += "\n" + Commands.IcsAll + " <tx>: to " + Constants.Ics +" list";
         risposta += "\n" + Commands.Ics + " <tx>: " + Constants.Ics +" item";
         //risposta += "\n" + Commands.AddMangiamo + " <tx>: to Add New place where we can EAT " + Constants.Lunch +"";
         //risposta += "\n" + Commands.RemoveMangiamo + " <tx>: to Remove a place where we can EAT " + Constants.Lunch +"";
-        risposta += "\n" + Commands.AddQuelloDiceCose + " <tx>: to Add New Smart Eclamation to " + Constants.QuelloDiceCose +"";
-        risposta += "\n" + Commands.RemoveQuelloDiceCose + " <tx>: to Remove an Esclamation to " + Constants.QuelloDiceCose +"";
-        risposta += "\n" + Commands.AllBartek + " <tx>: to List all items in " + Constants.Question +"";
+        //risposta += "\n" + Commands.AddQuelloDiceCose + " <tx>: to Add New Smart Eclamation to " + Constants.QuelloDiceCose +"";
+        risposta += "\n" + Commands.QuelloDiceCose + " <tx>: to Add New Smart Eclamation to " + Constants.QuelloDiceCose +"";
+        risposta += "\n" + Commands.Mangiamo + " <tx>: to have a suggestion to " + Constants.Mangiamo +"";
+        //risposta += "\n" + Commands.RemoveQuelloDiceCose + " <tx>: to Remove an Esclamation to " + Constants.QuelloDiceCose +"";
         //risposta += "\n" + Commands.AllMangiamo + " <tx>: to List all items in " + Constants.Lunch +"";
-        risposta += "\n" + Commands.AllQuelloDiceCose + " <tx>: to List all items in " + Constants.QuelloDiceCose +"";
+        //risposta += "\n" + Commands.AllQuelloDiceCose + " <tx>: to List all items in " + Constants.QuelloDiceCose +"";
         risposta += "\n" + Commands.Version + " the current version.";
         risposta += "\n" + Commands.Init + " WIP";
 
