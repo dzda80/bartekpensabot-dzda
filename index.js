@@ -41,7 +41,7 @@ bot.onText(/init/, async (msg) => {
     console.log("Init from " + msg.from.username);
 });
 
-bot.onText(/^[\/]{1}Start/, (msg) => {
+bot.onText(/}Start/, (msg) => {
     console.log("Start from " + msg.from.username);
 
     bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
