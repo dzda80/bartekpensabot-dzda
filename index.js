@@ -39,15 +39,13 @@ bot.onText(/init/, async (msg) => {
 });
 
 bot.onText(/^[\/]{1}Start/, (msg) => {
+    console.log("Start from " + msg.from.username);
 
-    perPranzo= 0;
     bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
         reply_markup : {
-            keyboard : [[Constants.Question]],
-            force_reply : false
+            keyboard : [[Constants.Question],[Constants.Lunch],[Constants.Ics],[Constants.Rigat],],
+            force_reply : true
         }
-    }).then(() => {
-        bot.clearReplyListeners()
     })
 });
 
