@@ -1,6 +1,5 @@
 const { Constants } = require("./constants");
 const { Commands } = require("./commands");
-const redisClient = require("./redisClient");
 const friday = require('./friday.json');
 const fs = require('fs');
 var done = 0;
@@ -10,6 +9,16 @@ var dayOfWeek_global  = today_global.getDay();
 var files = null;
 
 module.exports = {
+    
+    giornoCambiato: function (dayOfWeek_global ){
+        var dayOfWeek = new Date().getDay();
+        if(dayOfWeek_global != dayOfWeek) {
+            dayOfWeek_global = dayOfWeek;
+            return true;
+        }
+        return false;
+    },
+
     rispondi: function (lista){
         if( this.giornoCambiato(dayOfWeek_global)== true ) console.log("cambiato Giorno " +  (new Date().toDateString()));
         var isFriday = (new Date().getDay() === 5) ; 
@@ -58,25 +67,18 @@ module.exports = {
         risposta += "\n" + Commands.Ics + " <tx>: " + Constants.Ics +" item";
         //risposta += "\n" + Commands.AddMangiamo + " <tx>: to Add New place where we can EAT " + Constants.Lunch +"";
         //risposta += "\n" + Commands.RemoveMangiamo + " <tx>: to Remove a place where we can EAT " + Constants.Lunch +"";
-        risposta += "\n" + Commands.AddRDiceCose + " <tx>: to Add New Smart Eclamation to " + Constants.QuelloDiceCose +"";
-        risposta += "\n" + Commands.RemoveRDiceCose + " <tx>: to Remove an Esclamation to " + Constants.QuelloDiceCose +"";
+        risposta += "\n" + Commands.AddQuelloDiceCose + " <tx>: to Add New Smart Eclamation to " + Constants.QuelloDiceCose +"";
+        risposta += "\n" + Commands.RemoveQuelloDiceCose + " <tx>: to Remove an Esclamation to " + Constants.QuelloDiceCose +"";
         risposta += "\n" + Commands.AllBartek + " <tx>: to List all items in " + Constants.Question +"";
         //risposta += "\n" + Commands.AllMangiamo + " <tx>: to List all items in " + Constants.Lunch +"";
-        risposta += "\n" + Commands.AllRDiceCose + " <tx>: to List all items in " + Constants.QuelloDiceCose +"";
+        risposta += "\n" + Commands.AllQuelloDiceCose + " <tx>: to List all items in " + Constants.QuelloDiceCose +"";
         risposta += "\n" + Commands.Version + " the current version.";
         risposta += "\n" + Commands.Init + " WIP";
 
         return risposta;
     },
 
-    giornoCambiato: function (dayOfWeek_global ){
-        var dayOfWeek = new Date().getDay();
-        if(dayOfWeek_global != dayOfWeek) {
-            dayOfWeek_global = dayOfWeek;
-            return true;
-        }
-        return false;
-    },
+
     
     readMessageForUser: async function (msg) {
         return await redisClient.getInt(msg.chat.id, msg.from.username);
@@ -90,7 +92,6 @@ module.exports = {
     initFilesDio: async function (ChatId, folder)
     {
          files = null;
-    }
-
+    },
+   
 }
-

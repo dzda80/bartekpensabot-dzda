@@ -1,15 +1,15 @@
 require("./app")
 const { Constants } = require("./constants");
-const Utility = require("./utility");
-const { rispondi } = require("./utility");
 const friday = require('./friday.json'); 
 var questions = require('./questions.json');
+
+const Utility = require("./utility");
 
 const whats ="Cosa?";
 const TelegramBot =require('node-telegram-bot-api');
 const bot = new TelegramBot(process.env.BOT_API_KEY, {polling:true});
 
-
+ 
 
 var id_message_start ="";
 
@@ -79,11 +79,11 @@ bot.onText(/sistema/, async (msg) => {
      
  });
  
-  bot.onText(/QuelloDicecose/, async (msg) => {
-    console.log("QuelloDicecose");
+  bot.onText(/QuelloDice/, async (msg) => {
+    
      if(questions && questions.QuelloDiceCose) {
          var quest = rispondi(questions.QuelloDiceCose);
-         bot.sendMessage("Quello dice: " +  msg.chat.id,quest);
+         bot.sendMessage( msg.chat.id, "Quello dice: " + quest);         
      } else {
          bot.sendMessage(msg.chat.id, whats);
      }
@@ -128,3 +128,17 @@ bot.onText(/sistema/, async (msg) => {
    
 }
 
+function rispondi(lista){
+    
+    if( GiornoCambiato()) console.log("cambiato Giorno");
+
+    var isFriday = (new Date().getDay() === 5) ; 
+
+    if(isFriday && done < friday.esclamazioni.length) {  
+        perPranzo = -1;   
+        return friday.esclamazioni[done++] 
+   }
+   else{
+       return lista[Math.floor(Math.random() * lista.length)]
+   }
+}
