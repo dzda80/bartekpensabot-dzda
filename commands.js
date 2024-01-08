@@ -18,9 +18,9 @@ module.exports.Commands = process.env.COMMAND_VERSION =="FAKE" ?
     Bartek : /no Domandati/,
     Mangiamo : /no Mangiamo/,
     QuelloDiceCose: /no QuelloDiceCose/,
-    AllRDiceCose: /no RDiceAll/,
-    AddRDiceCose: /no RDiceAdd /,
-    RemoveRDiceCose: /no RDiceRemove /,
+    AllQuelloDiceCose: /no RDiceAll/,
+    AddQuelloDiceCose: /no RDiceAdd /,
+    RemoveQuelloDiceCose: /no RDiceRemove /,
     Dio: /DiOpork/
    } :
    {
@@ -41,8 +41,8 @@ module.exports.Commands = process.env.COMMAND_VERSION =="FAKE" ?
     Bartek : /Domandati/,
     Mangiamo : /Mangiamo/,
     QuelloDiceCose: /QuelloDiceCose/,
-    AllRDiceCose: /RDiceAll/,
-    AddRDiceCose: /RDiceAdd /,
-    RemoveRDiceCose: /RDiceRemove /,
+    AllQuelloDiceCose: /RDiceAll/,
+    AddQuelloDiceCose: /RDiceAdd /,
+    RemoveQuelloDiceCose: /RDiceRemove /,
     Dio: /Dio/
    };

@@ -8,7 +8,7 @@ module.exports.Constants = {
     Ics : emoji.get('x')+" ics",
     Ics_Answer : "La tua ICS: \n",
     QuelloDiceCose : emoji.get('x')+" QuelloDiceCose ",
-    RDiceCose_Answer : "R. dice: \n",
+    QuelloDiceCose_Answer : "R. dice: \n",
     Lunch_Answer : "Oggi Mangerai da \n",
     FaiCose: emoji.get('x')+" sistema",
     Whats: "Cosa?",
