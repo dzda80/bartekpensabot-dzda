@@ -79,7 +79,7 @@ bot.onText(/Version/, async (msg) => {
 
 bot.onText(/Domandati/, async (msg) => {
     console.log("Domandati");
-    //console.log(questions.domandone);
+
     if(questions && questions.domandone) {
         var quest = rispondi(questions.domandone);
         bot.sendMessage(msg.chat.id, "Quello dice: \n" + quest);
