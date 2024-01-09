@@ -82,7 +82,7 @@ bot.onText(/Domandati/, async (msg) => {
     //console.log(questions.domandone);
     if(questions && questions.domandone) {
         var quest = rispondi(questions.domandone);
-        bot.sendMessage(msg.chat.id, "Qeullo dice: \n" + quest);
+        bot.sendMessage(msg.chat.id, "Quello dice: \n" + quest);
     } else {
         bot.sendMessage(msg.chat.id, whats);
     }
