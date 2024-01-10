@@ -34,7 +34,9 @@
         "Ma staggentemmerd u'sanno che dev'n morì",
         "Sono le tue cazzo di scarpe!",
         "Aspetto che risolvi il tuo bug.",
-        "Profumo di Libertà!"
+        "Profumo di Libertà!",
+        "Ma se togliamo Zookeeper, quanta RAM liberiamo?",
+        "Poi da aprile vediamo di lavorare un po' in Project mode"
     ],
     "pranzo": [
         "Baretto",
@@ -59,9 +61,5 @@
         "ControCorrente",
         "Personigga",
         "Romaxoli (padina)"
-    ],
-    "QuelloDiceCose":[
-        "Ma se togliamo Zookeeper, quanta RAM liberiamo?",
-        "Poi da aprile vediamo di lavorare un po' in Project mode"
     ]
 }
