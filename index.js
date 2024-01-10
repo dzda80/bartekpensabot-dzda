@@ -16,6 +16,16 @@ var id_message_start ="";
 
 
 
+const keyboard = {
+    "inline_keyboard": [
+        [
+            {"text": "Questions", "callback_data": "Mangiamo"},
+            {"text": "Dove mangiare",  "callback_data": "Domandati"},
+            {"text": "Ics", "callback_data": "ics"},
+        ]
+        ]
+    };
+
     
 
 var done = 0;
@@ -34,7 +44,7 @@ bot.onText(/\/start/, (msg) => {
   // Tastiera personalizzata
   const options = {
     reply_markup: JSON.stringify({
-      keyboard: [['Mangiamo', 'Domandati'], ['QuelloDice', 'ics']],
+      keyboard: [['Mangiamo', 'Domandati'], ['Opzione 3']],
       one_time_keyboard: true,
     }),
   };
