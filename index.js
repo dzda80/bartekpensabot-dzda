@@ -35,20 +35,23 @@ var dayOfWeek_global  = today_global.getDay();
 var menutoogle = true;
 
 
-bot.onText(/^\/start$/, function (msg) {
-    bot.sendMessage(msg.chat.id, "I'm a test robot");
-
-    const opts = {
-        reply_to_message_id: msg.message_id,
-        reply_markup: {
-            resize_keyboard: true,
-            one_time_keyboard: true,
-            keyboard: [ ['Level 1'] ]
-        }
+bot.onText(/\/start/, (msg) => {
+    const chatId = msg.chat.id;
+  
+    // Messaggio di benvenuto
+    const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.';
+  
+    // Tastiera personalizzata
+    const options = {
+      reply_markup: JSON.stringify({
+        keyboard: [['Opzione 1', 'Opzione 2'], ['Opzione 3']],
+        one_time_keyboard: true,
+      }),
     };
-
-    bot.sendMessage(msg.chat.id, "I'm a test robot", opts);
-});
+  
+    // Invia il messaggio con la tastiera
+    bot.sendMessage(chatId, messageText, options);
+  });
 
 bot.onText(/init/, async (msg) => {
     done = 0;

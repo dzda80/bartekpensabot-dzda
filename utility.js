@@ -31,6 +31,9 @@ module.exports = {
     },
 
     rispondiMangiamo: function (lista){
+        console.log(lista.length)
+        console.log(lista.length)
+        
         return lista[Math.floor(Math.random() * lista.length)]
     },
 
