@@ -16,13 +16,6 @@ var id_message_start ="";
 
 
 
-const keyboard = 
-        [
-            {"text": "Questions", "callback_data": "Mangiamo"},
-            {"text": "Dove mangiare",  "callback_data": "Domandati"},
-            {"text": "Ics", "callback_data": "ics"},
-        ];
-
     
 
 var done = 0;
@@ -33,22 +26,22 @@ var menutoogle = true;
 
 
 bot.onText(/\/start/, (msg) => {
-    const chatId = msg.chat.id;
-  
-    // Messaggio di benvenuto
-    const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.';
-  
-    // Tastiera personalizzata
-    const options = {
-      reply_markup: JSON.stringify({
-        keyboard: keyboard,
-        one_time_keyboard: true,
-      }),
-    };
-  
-    // Invia il messaggio con la tastiera
-    bot.sendMessage(chatId, messageText, options);
-  });
+  const chatId = msg.chat.id;
+
+  // Messaggio di benvenuto
+  const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.';
+
+  // Tastiera personalizzata
+  const options = {
+    reply_markup: JSON.stringify({
+      keyboard: [['Mangiamo', 'Domandati'], ,['QuelloDice', 'ics']],
+      one_time_keyboard: true,
+    }),
+  };
+
+  // Invia il messaggio con la tastiera
+  bot.sendMessage(chatId, messageText, options);
+});
 
 bot.onText(/init/, async (msg) => {
     done = 0;
