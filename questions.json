@@ -24,19 +24,7 @@
         "Anche su staging?",
         "Bundesliga o bundesliga2?",
         "Bundesliga or BurgersLiga?",
-        "Michael è in ferie?",
-        "Just to put a Number",
-        "Friariello!!!",
-        "Tananai Tanaminchia Tanastocazzo!!!",
-        "Uno Tsnumami di musica di merda!!!",
-        "Spudorato!",
-        "Come sono i nuovi arrivati?",
-        "Ma staggentemmerd u'sanno che dev'n morì",
-        "Sono le tue cazzo di scarpe!",
-        "Aspetto che risolvi il tuo bug.",
-        "Profumo di Libertà!",
-        "Ma se togliamo Zookeeper, quanta RAM liberiamo?",
-        "Poi da aprile vediamo di lavorare un po' in Project mode"
+        "Michael è in ferie?"
     ],
     "pranzo": [
         "Baretto",
@@ -61,5 +49,19 @@
         "ControCorrente",
         "Personigga",
         "Romaxoli (padina)"
+    ],
+    "QuelloDiceCose":[
+        "Ma se togliamo Zookeeper, quanta RAM liberiamo?",
+        "Poi da aprile vediamo di lavorare un po' in Project mode",
+        "Just to put a Number",
+        "Friariello!!!",
+        "Tananai Tanaminchia Tanastocazzo!!!",
+        "Uno Tsnumami di musica di merda!!!",
+        "Spudorato!",
+        "Come sono i nuovi arrivati?",
+        "Ma staggentemmerd u'sanno che dev'n morì",
+        "Sono le tue cazzo di scarpe!",
+        "Aspetto che risolvi il tuo bug.",
+        "Profumo di Libertà!"
     ]
 }
