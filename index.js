@@ -16,15 +16,12 @@ var id_message_start ="";
 
 
 
-const keyboard = {
-    "inline_keyboard": [
+const keyboard = 
         [
             {"text": "Questions", "callback_data": "Mangiamo"},
             {"text": "Dove mangiare",  "callback_data": "Domandati"},
             {"text": "Ics", "callback_data": "ics"},
-        ]
-        ]
-    };
+        ];
 
     
 
