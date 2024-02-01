@@ -44,7 +44,7 @@ bot.onText(/\/start/, (msg) => {
   // Tastiera personalizzata
   const options = {
     reply_markup: JSON.stringify({
-      keyboard: [['Mangiamo', 'Domandati', 'ics'], ['QuelloDice']],
+      keyboard: [['Mangiamo', 'Domandati', 'ics'], ['QuelloDice', 'JTPANumber']],
       one_time_keyboard: false,
     }),
   };
@@ -77,6 +77,18 @@ bot.onText(/Version/, async (msg) => {
     console.log("Version");
     console.log(Constants.Version);
     bot.sendMessage(msg.chat.id, "Versione: \n" + Constants.Version);
+
+});
+
+bot.onText(/JTPANumber/, async (msg) => {
+    console.log("Just to put a Number");
+
+    if(questions && questions.Number) {
+        var quest = rispondi(questions.domandone);
+        bot.sendMessage(msg.chat.id, "Just to put a Number \n" + quest);
+    } else {
+        bot.sendMessage(msg.chat.id, whats);
+    }
 
 });
 
