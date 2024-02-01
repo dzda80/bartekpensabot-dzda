@@ -84,7 +84,7 @@ bot.onText(/JTPANumber/, async (msg) => {
     console.log("Just to put a Number");
 
     if(questions && questions.Number) {
-        var quest = rispondi(questions.domandone);
+        var quest = rispondi(questions.Number);
         bot.sendMessage(msg.chat.id, "Just to put a Number \n" + quest);
     } else {
         bot.sendMessage(msg.chat.id, whats);
