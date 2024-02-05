@@ -94,7 +94,7 @@ bot.onText(/JTPANumber/, async (msg) => {
 
 bot.onText(/Domandati/, async (msg) => {
     console.log("Domandati");
-    var element =  questions.domandone.concat(questions.QuelloDiceCose)
+    var elementi =  questions.domandone.concat(questions.QuelloDiceCose)
     if(questions && elementi) {
         var quest = rispondi(elementi);
         bot.sendMessage(msg.chat.id, "Quello dice: \n" + quest);
@@ -123,7 +123,7 @@ bot.onText(/sistema/, async (msg) => {
   bot.onText(/QuelloDice/, async (msg) => {
     
 
-    var element =  questions.domandone.concat(questions.QuelloDiceCose)
+    var elementi =  questions.domandone.concat(questions.QuelloDiceCose)
     if(questions && elementi) {
         var quest = rispondi(elementi);
          bot.sendMessage( msg.chat.id, "Quello dice: " + quest);         
