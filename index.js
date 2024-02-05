@@ -44,7 +44,7 @@ bot.onText(/\/start/, (msg) => {
   // Tastiera personalizzata
   const options = {
     reply_markup: JSON.stringify({
-      keyboard: [['Mangiamo', 'Domandati', 'ics'], ['QuelloDice', 'JTPANumber']],
+      keyboard: [['Domandati', 'ics'], ['QuelloDice', 'JTPANumber']],
       one_time_keyboard: false,
     }),
   };
@@ -94,9 +94,9 @@ bot.onText(/JTPANumber/, async (msg) => {
 
 bot.onText(/Domandati/, async (msg) => {
     console.log("Domandati");
-
-    if(questions && questions.domandone) {
-        var quest = rispondi(questions.domandone);
+    var element =  questions.domandone.concat(questions.QuelloDiceCose)
+    if(questions && elementi) {
+        var quest = rispondi(elementi);
         bot.sendMessage(msg.chat.id, "Quello dice: \n" + quest);
     } else {
         bot.sendMessage(msg.chat.id, whats);
@@ -122,8 +122,10 @@ bot.onText(/sistema/, async (msg) => {
  
   bot.onText(/QuelloDice/, async (msg) => {
     
-     if(questions && questions.QuelloDiceCose) {
-         var quest = rispondi(questions.QuelloDiceCose);
+
+    var element =  questions.domandone.concat(questions.QuelloDiceCose)
+    if(questions && elementi) {
+        var quest = rispondi(elementi);
          bot.sendMessage( msg.chat.id, "Quello dice: " + quest);         
      } else {
          bot.sendMessage(msg.chat.id, whats);
