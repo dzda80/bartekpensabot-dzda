@@ -44,7 +44,7 @@ bot.onText(/\/start/, (msg) => {
   // Tastiera personalizzata
   const options = {
     reply_markup: JSON.stringify({
-      keyboard: [['Domandati', 'ics'], ['QuelloDice', 'JTPANumber']],
+      keyboard: [['Mangiamo', 'ics'], ['QuelloDice', 'JTPANumber']],
       one_time_keyboard: false,
     }),
   };
