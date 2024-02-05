@@ -84,6 +84,8 @@ bot.onText(/QuelloRimuove/, async (msg) => {
     
     bot.sendMessage(msg.chat.id, "Sì, ma sta calmo! non è pronta!");
 
+    console.log("Quello removed " + msg.from.username + " from the chat");
+
 });
 
 bot.onText(/JustToPutANumber/, async (msg) => {
