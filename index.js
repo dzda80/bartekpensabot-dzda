@@ -82,9 +82,7 @@ bot.onText(/Version/, async (msg) => {
 
 bot.onText(/QuelloRimuove/, async (msg) => {
     
-    bot.sendMessage(msg.chat.id, "Sì, ma sta calmo! non è pronta!");
-
-    console.log("Quello removed " + msg.from.username + " from the chat");
+    bot.sendMessage(msg.chat.id, "Quello removed " + msg.from.username + " from the chat");
 
 });
 
