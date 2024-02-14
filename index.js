@@ -57,19 +57,17 @@ bot.onText(/init/, async (msg) => {
     done = 0;
     perPranzo = 0;
     console.log("Init from " + msg.from.username);
-   
-  
 });
 
 bot.onText(/}Start/, (msg) => {
     console.log("Start from " + msg.from.username);
 
-    bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
-        reply_markup : {
-            keyboard : keyboard,
-            force_reply : true
-        }
-    })
+    // bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
+    //     reply_markup : {
+    //         keyboard : keyboard,
+    //         force_reply : true
+    //     }
+    // })
 });
 
 
@@ -82,7 +80,8 @@ bot.onText(/Version/, async (msg) => {
 
 bot.onText(/QuelloRimuove/, async (msg) => {
     
-    bot.sendMessage(msg.chat.id, "Quello removed " + msg.from.username + " from the chat");
+    let name = message.from.username ? "@"+message.from.username : message.from.first_name;
+    bot.sendMessage(msg.chat.id, "Quello removed " + name + " from the chat");
 
 });
 
