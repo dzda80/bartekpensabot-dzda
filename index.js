@@ -44,7 +44,7 @@ bot.onText(/\/start/, (msg) => {
   // Tastiera personalizzata
   const options = {
     reply_markup: JSON.stringify({
-      keyboard: [['Mangiamo', 'ics'], ['QuelloDice', 'QuelloRimuove'], ['JustToPutANumber' + emoji.get('3')]],
+      keyboard: [['Mangiamo', 'ics'], ['QuelloDice', 'QuelloRimuove'], ['JustToPutANumber']],
       one_time_keyboard: false,
     }),
   };
@@ -80,7 +80,7 @@ bot.onText(/Version/, async (msg) => {
 
 bot.onText(/QuelloRimuove/, async (msg) => {
     
-    let name = message.from.username ? "@"+message.from.username : message.from.first_name;
+    let name = msg.from.username ? "@"+msg.from.username : msg.from.first_name;
     bot.sendMessage(msg.chat.id, "Quello removed " + name + " from the chat");
 
 });
