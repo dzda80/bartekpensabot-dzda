@@ -1,3 +1,4 @@
+require('dotenv').config()
 require("./app")
 const { emoji } = require("node-emoji");
 const { Constants } = require("./constants");
