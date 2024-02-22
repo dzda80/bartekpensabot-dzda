@@ -60,16 +60,23 @@ bot.onText(/init/, async (msg) => {
     console.log("Init from " + msg.from.username);
 });
 
-// bot.onText(/Start/, (msg) => {
-//     console.log("Start from " + msg.from.username);
+bot.onText(/Start/, (msg) => {
+    const chatId = msg.chat.id;
 
-//     bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
-//         reply_markup : {
-//             keyboard : keyboard,
-//             force_reply : true
-//         }
-//     })
-// });
+    // Messaggio di benvenuto
+    const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.';
+  
+    // Tastiera personalizzata
+    const options = {
+      reply_markup: JSON.stringify({
+        keyboard: [['Mangiamo ', 'ics'], ['QuelloDice', 'QuelloRimuove'], ['JustToPutANumber']],
+        one_time_keyboard: false,
+      }),
+    };
+  
+    // Invia il messaggio con la tastiera
+    bot.sendMessage(chatId, messageText, options);
+  });
 
 
 bot.onText(/Version/, async (msg) => {
