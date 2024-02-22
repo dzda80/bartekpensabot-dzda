@@ -45,7 +45,7 @@ bot.onText(/\/start/, (msg) => {
   // Tastiera personalizzata
   const options = {
     reply_markup: JSON.stringify({
-      keyboard: [['Mangiamo '+ emoji('coffee'), 'ics'], ['QuelloDice', 'QuelloRimuove'], ['JustToPutANumber' + emoji('goose')]],
+      keyboard: [['Mangiamo ', 'ics'], ['QuelloDice', 'QuelloRimuove'], ['JustToPutANumber']],
       one_time_keyboard: false,
     }),
   };
@@ -60,16 +60,16 @@ bot.onText(/init/, async (msg) => {
     console.log("Init from " + msg.from.username);
 });
 
-bot.onText(/Start/, (msg) => {
-    console.log("Start from " + msg.from.username);
+// bot.onText(/Start/, (msg) => {
+//     console.log("Start from " + msg.from.username);
 
-    bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
-        reply_markup : {
-            keyboard : keyboard,
-            force_reply : true
-        }
-    })
-});
+//     bot.sendMessage(msg.chat.id, Constants.WelcomeMessage, {
+//         reply_markup : {
+//             keyboard : keyboard,
+//             force_reply : true
+//         }
+//     })
+// });
 
 
 bot.onText(/Version/, async (msg) => {
