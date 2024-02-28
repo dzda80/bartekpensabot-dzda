@@ -48,7 +48,7 @@ bot.onText(/\/start/, (msg) => {
     reply_markup: JSON.stringify({
       keyboard: [['Mangiamo ' + emoji.get('spaghetti') + ' or ' + emoji.get('pizza'), 'ics'], 
                 [ 'QuelloDice' + emoji.get('question'), 
-                'QuelloRimuove'+ emoji.get('rocket')  ], ['JustToPutANumber'+ emoji.get('3') + ' or'  +emoji.get('8')  + '?']],
+                'QuelloRimuove'+ emoji.get('rocket')  ], ['JustToPutANumber'+ emoji.get('three') + ' or'  +emoji.get('eight')  + '?']],
       one_time_keyboard: false,
     }),
   };
