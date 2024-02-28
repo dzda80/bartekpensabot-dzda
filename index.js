@@ -41,6 +41,7 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
 
   // Messaggio di benvenuto
+  const photo = 'images/FagigioTek.jpg' ;
   const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.' + emoji.get('angel') + emoji.get('pig') ;
 
   // Tastiera personalizzata
@@ -55,6 +56,7 @@ bot.onText(/\/start/, (msg) => {
 
   // Invia il messaggio con la tastiera
   bot.sendMessage(chatId, messageText, options);
+  bot.sendPhoto(chatId, photo, messageText, options);
 });
 
 bot.onText(/init/, async (msg) => {
