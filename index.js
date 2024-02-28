@@ -56,7 +56,7 @@ bot.onText(/\/start/, (msg) => {
 
   // Invia il messaggio con la tastiera
   bot.sendMessage(chatId, messageText, options);
-  bot.sendPhoto(chatId, photo, messageText, options);
+  bot.sendPhoto(chatId, photo, options);
 });
 
 bot.onText(/init/, async (msg) => {
