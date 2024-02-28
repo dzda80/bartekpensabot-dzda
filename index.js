@@ -56,10 +56,7 @@ bot.onText(/\/start/, (msg) => {
 
   // Invia il messaggio con la tastiera
   bot.sendMessage(chatId, messageText, options);
-  bot.sendPhoto(chatId, photo, options);
 
-
-  console.log(Constants.Tektek);
   let image = getRandomImages(Constants.Tektek);
   console.log(image);
   bot.sendPhoto(chatId, image, options);
@@ -223,5 +220,7 @@ function rispondi(lista){
 }
 
 function getRandomImages(lista){
+    console.log(lista.length)
+    console.log(lista);
     return lista[Math.floor(Math.random() * lista.length)]
 }
