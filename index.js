@@ -1,6 +1,6 @@
 require('dotenv').config()
 require("./app")
-const { emoji } = require("node-emoji");
+const emoji = require("node-emoji");
 const { Constants } = require("./constants");
 const friday = require('./friday.json'); 
 var questions = require('./questions.json');
@@ -21,7 +21,7 @@ var id_message_start ="";
 const keyboard = {
     "inline_keyboard": [
         [
-            {"text": "Questions", "callback_data": "Mangiamo"},
+            {"text": emoji.get('question') + "Questions", "callback_data": "Mangiamo"},
             {"text": "Dove mangiare",  "callback_data": "Domandati"},
             {"text": "Ics", "callback_data": "ics"},
         ]
