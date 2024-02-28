@@ -41,7 +41,8 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
 
   // Messaggio di benvenuto
-  const photo = getRandomImages(Constants.Tektek);
+  const photo2 = getRandomImages(Constants.Tektek);
+  const photo = "images/MimmoTek.jpg"
   const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.' + emoji.get('angel') + emoji.get('pig') ;
 
   // Tastiera personalizzata
@@ -56,7 +57,7 @@ bot.onText(/\/start/, (msg) => {
 
   // Invia il messaggio con la tastiera
   bot.sendMessage(chatId, messageText, options);
-   console.log("Init from " + photo);
+   console.log("Init from " + photo2);
   bot.sendPhoto(chatId, photo, options);
 });
 
