@@ -41,7 +41,6 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
 
   // Messaggio di benvenuto
-  const photo = 'images/FagigioTek.jpg' ;
   const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.' + emoji.get('angel') + emoji.get('pig') ;
 
   // Tastiera personalizzata
@@ -58,7 +57,6 @@ bot.onText(/\/start/, (msg) => {
   bot.sendMessage(chatId, messageText, options);
 
   let image = getRandomImages(Constants.Tektek);
-  console.log(image);
   bot.sendPhoto(chatId, image, options);
 
 });
@@ -220,7 +218,5 @@ function rispondi(lista){
 }
 
 function getRandomImages(lista){
-    console.log(lista.length)
-    console.log(lista);
     return lista[Math.floor(Math.random() * lista.length)]
 }
