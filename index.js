@@ -41,12 +41,12 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
 
   // Messaggio di benvenuto
-  const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.' + emoji.get('angel') + emoji.get('halo') + emoji.get('pig') ;
+  const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.' + emoji.get('angel') + emoji.get('pig') ;
 
   // Tastiera personalizzata
   const options = {
     reply_markup: JSON.stringify({
-      keyboard: [['Mangiamo ' + emoji.get('spaghetti') + ' or ' + emoji.get('spaghetti'), 'ics'], 
+      keyboard: [['Mangiamo ' + emoji.get('spaghetti') + ' or ' + emoji.get('pizza'), 'ics'], 
                 [ 'QuelloDice' + emoji.get('question'), 
                 'QuelloRimuove'+ emoji.get('rocket')  ], ['JustToPutANumber'+ emoji.get('3') + ' or'  +emoji.get('8')  + '?']],
       one_time_keyboard: false,
