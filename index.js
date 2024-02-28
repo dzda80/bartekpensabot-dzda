@@ -41,7 +41,7 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
 
   // Messaggio di benvenuto
-  const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.';
+  const messageText = 'Ciao! Benvenuto nel tuo bot personalizzato.' + emoji.get('question') ;
 
   // Tastiera personalizzata
   const options = {
