@@ -56,7 +56,7 @@ bot.onText(/\/start/, (msg) => {
 
   // Invia il messaggio con la tastiera
   bot.sendMessage(chatId, messageText, options);
-   console.log("Init from " + msg.from.username);
+   console.log("Init from " + photo);
   bot.sendPhoto(chatId, photo, options);
 });
 
